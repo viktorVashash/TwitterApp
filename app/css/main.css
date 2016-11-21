@@ -1,0 +1,193 @@
+/* Configs */
+
+@font-face {
+  font-family: OpenSansLight;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+
+@-webkit-keyframes shadow {
+  50%{
+    box-shadow: 0 0 0 5px rgba(49, 218, 248, 0.5);
+  }
+}
+
+@-webkit-keyframes animation {
+  0% { transform: matrix3d(0.1, 0, 0, 0, 0, 0.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  4.7% { transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  9.41% { transform: matrix3d(0.88, 0, 0, 0, 0, 0.88, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  14.11% { transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  18.72% { transform: matrix3d(1.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  24.32% { transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  29.93% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  35.54% { transform: matrix3d(0.97, 0, 0, 0, 0, 0.97, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  41.04% { transform: matrix3d(0.96, 0, 0, 0, 0, 0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  52.15% { transform: matrix3d(0.99, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  63.26% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  85.49% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}
+
+@-webkit-keyframes backAnimation {
+  50%{
+    box-shadow: 0 0 0 5px rgba(224, 224, 224, 0.5);
+  }
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  width: inherit;
+  height: inherit;
+}
+
+.alignment {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100px;
+  width: 400px;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  box-sizing: border-box;
+  border: 1px solid #31daf8;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -16px 0px 0px -16px;
+  border-top-color: rgba(49, 218, 248, 1);
+  border-left-color: rgba(49, 218, 248, 0.7);
+  border-bottom-color: rgba(49, 218, 248, 0.4);
+  border-right-color: rgba(49, 218, 248, 0.1);
+  animation: rotate 1000ms infinite steps(24, end), linear;
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+.btn {
+  position: absolute;
+  cursor: pointer;
+  bottom: 60px;
+  left: 50%;
+  height: 40px;
+  width: 150px;
+  border: none;
+  border-radius: 50px;
+  padding: 0;
+  margin: 0 0 0 -75px;
+  background-color: #31daf8;
+  font-size: 14px;
+  color: #ffffff;
+  font-family: OpenSansLight;
+  font-weight: 600;
+}
+
+.btn:hover {
+  animation: shadow 5s infinite ease-in-out;
+}
+
+.btn:focus {
+  border: 1px solid #98edfc;
+  outline: none;
+}
+
+/*Transition*/
+
+.trans-appear {
+    opacity: 0
+}
+
+.trans-appear.trans-appear-active {
+    opacity: 1;
+    transition: opacity .5s ease-in-out
+}
+
+/*Initial Screen*/
+
+.loginButton {
+  height: 50px;
+  width: 300px;
+  margin: -25px 0 0 -150px;
+  box-shadow: 0 0 0 20px rgba(49,218,248,0.1);
+  font-size: 16px;
+}
+
+.loginButton img {
+  vertical-align: middle;
+  margin: 0 15px 3px 0;
+}
+
+/*Main Screen*/
+
+.mainFreeMemmory {
+  margin: -50px 0 0 -200px;
+  font-size: 24px;
+  line-height: 40px;
+  font-family: OpenSansLight;
+}
+
+.mainFreeMemmory::before {
+  content: "\00ab";
+}
+
+.mainFreeMemmory::after {
+  content: "\00bb.";
+}
+
+.mainFreeMemmory label::before {
+  content: "\0023"
+}
+
+/*Success Screen*/
+
+.success {
+  width: 300px;
+  margin: -50px 0 0 -150px;
+  animation: animation 1s linear both;
+}
+
+.successLog {
+  text-align: center;
+}
+
+.successText {
+  margin-top: 15px;
+  text-align: center;
+  color: #2ce17d;
+  font-size: 16px;
+  font-family: OpenSansLight;
+  font-weight: 600;
+}
+
+.backBtn {
+  border: 1px solid #e0e0e0;
+  color: #676767;
+  background: 0;
+}
+
+.backBtn span::before {
+  content: "\2190";
+}
+
+.backBtn:focus {
+  border: 2px solid #e0e0e0;
+}
+
+.backBtn:hover {
+  animation: backAnimation 5s infinite ease-in-out;
+}
+
+.backBtn span {
+  margin-right: 10px;
+  font-family: OpenSansLight;
+}

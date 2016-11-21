@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      (function() {
+        if(!process.env.HOT) {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = './styles.css';
+          document.write(link.outerHTML);
+        }
+      }());
+    </script>
+  </head>
+  <body>
+    <div id="container" class="container"></div>
+    <script>
+      {
+        const script = document.createElement('script');
+        const port = process.env.PORT || 8080;
+        script.src = (process.env.HOT) ? `http://localhost:${port}/js/bundle.js` : './js/bundle.js';
+        document.write(script.outerHTML);
+      }
+    </script>
+  </body>
+</html>

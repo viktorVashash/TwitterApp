@@ -1,0 +1,12 @@
+node_modules/
+release/
+bundle.js
+bundle.js.map
+main.js
+main.js.map
+app/styles.css
+app/styles.css.map
+app/js/*.ttf
+.DS_Store
+logs
+*.log
